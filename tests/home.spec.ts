@@ -38,5 +38,19 @@ test.describe('Get Started', () => {
         await expect(headingText).toBeVisible();
         
     })
+    test('Verify heading text is visible using text selector', async ({ page }) => {
+        //open URL
+        await page.goto('https://playwright.dev/');
+
+        //find the text locator
+        const headingText = await page.locator('text= Playwright enables reliable end-to-end testing for modern web apps.');
+
+
+        //verify heading text is visible
+        await expect(headingText).toBeVisible();
+        
+    })
+
+
 })
 
